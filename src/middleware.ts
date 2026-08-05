@@ -1,5 +1,5 @@
-import { auth } from "@/lib/auth";
 import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
 const PUBLIC_ROUTES = [
   "/",
@@ -27,40 +27,31 @@ const PUBLIC_ROUTES = [
   "/api/webhooks",
 ];
 
-const COMPANY_ROUTES = ["/company"];
-const ADMIN_ROUTES = ["/admin"];
-
 function isPublic(pathname: string): boolean {
   return PUBLIC_ROUTES.some((r) => pathname === r || pathname.startsWith(r + "/"));
 }
 
-export default auth((req) => {
-  const { nextUrl } = req;
-  const session = req.auth;
+export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
 
   // Allow public routes and static assets
-  if (isPublic(nextUrl.pathname)) {
+  if (isPublic(pathname)) {
     return NextResponse.next();
   }
 
-  // Company routes: must be authenticated
-  if (COMPANY_ROUTES.some((r) => nextUrl.pathname.startsWith(r))) {
-    if (!session?.user) {
-      return NextResponse.redirect(new URL("/login", nextUrl));
-    }
-    return NextResponse.next();
-  }
+  // Protected routes: check for session cookie
+  const sessionCookie =
+    request.cookies.get("__Secure-authjs.session-token") ??
+    request.cookies.get("authjs.session-token");
 
-  // Admin routes: must be authenticated
-  if (ADMIN_ROUTES.some((r) => nextUrl.pathname.startsWith(r))) {
-    if (!session?.user) {
-      return NextResponse.redirect(new URL("/login", nextUrl));
-    }
-    return NextResponse.next();
+  if (!sessionCookie) {
+    const loginUrl = new URL("/login", request.url);
+    loginUrl.searchParams.set("callbackUrl", pathname);
+    return NextResponse.redirect(loginUrl);
   }
 
   return NextResponse.next();
-});
+}
 
 export const config = {
   matcher: [
