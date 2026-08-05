@@ -1,0 +1,88 @@
+import type { SafetyTip } from "@/lib/types";
+
+export const safetyTips: SafetyTip[] = [
+  {
+    id: "dont-share-private",
+    icon: "Shield",
+    title: "Never share private information",
+    body: "Do not enter passwords, ID numbers, bank details, private customer data, medical records, legal documents, or confidential work information into any AI tool. Describe your situation in general terms instead.",
+    category: "privacy",
+  },
+  {
+    id: "ai-can-be-wrong",
+    icon: "AlertTriangle",
+    title: "AI can be wrong — verify important information",
+    body: "AI sometimes makes up facts, quotes, statistics, and dates. Always double-check important information with trusted sources before using it.",
+    category: "accuracy",
+  },
+  {
+    id: "not-medical-advice",
+    icon: "Heart",
+    title: "AI is not a doctor, lawyer, or financial advisor",
+    body: "AI can help you understand topics and prepare questions, but never use it for final medical diagnoses, legal decisions, or financial commitments. Always consult a qualified human professional.",
+    category: "limitations",
+  },
+  {
+    id: "keep-human-in-loop",
+    icon: "Users",
+    title: "Keep humans in the loop",
+    body: "AI is a tool to help you think, not a replacement for your judgment. Review everything AI produces. If something feels wrong, trust your instincts.",
+    category: "ethics",
+  },
+  {
+    id: "check-dates",
+    icon: "Calendar",
+    title: "Check dates for time-sensitive information",
+    body: "AI training data may be months old. Always verify current prices, laws, policies, job postings, news, and medical guidelines before relying on AI output.",
+    category: "accuracy",
+  },
+  {
+    id: "use-general-descriptions",
+    icon: "Eye",
+    title: "Describe situations, don't paste identities",
+    body: "Instead of pasting a full document with real names and numbers, describe the general situation. Say 'a rental lease for a 2-bedroom apartment' instead of pasting your actual lease.",
+    category: "privacy",
+  },
+  {
+    id: "ask-for-sources",
+    icon: "Search",
+    title: "Ask AI for sources when facts matter",
+    body: "You can ask any AI: 'What is your source for that information?' or 'Can you provide a reference for that claim?' If it cannot give a source, treat the information as unverified.",
+    category: "accuracy",
+  },
+  {
+    id: "cultural-awareness",
+    icon: "Globe",
+    title: "AI may not understand your local context",
+    body: "AI tools are trained on global data and may miss cultural nuances, local customs, or regional specifics. Adapt AI suggestions to fit your community and context.",
+    category: "limitations",
+  },
+  {
+    id: "scam-awareness",
+    icon: "Zap",
+    title: "Be alert to AI-generated scams",
+    body: "Scammers use AI to create convincing fake messages, voices, and videos. If someone asks for money or personal information unexpectedly — even if it sounds like them — verify through another channel.",
+    category: "privacy",
+  },
+  {
+    id: "not-always-neutral",
+    icon: "Scale",
+    title: "AI is not always neutral",
+    body: "AI reflects biases from its training data. For important decisions affecting people (hiring, loans, services), be aware that AI suggestions may favor certain groups over others.",
+    category: "ethics",
+  },
+  {
+    id: "agriculture-warning",
+    icon: "Sprout",
+    title: "Verify agricultural and livelihood advice",
+    body: "AI suggestions about farming, crops, livestock, or local trade may not account for your specific climate, soil, market conditions, or regulations. Always verify with local agricultural experts.",
+    category: "limitations",
+  },
+  {
+    id: "start-small",
+    icon: "GraduationCap",
+    title: "Start small and build confidence",
+    body: "Begin with low-stakes tasks (planning a meal, writing a friendly email) before using AI for important work. Build your skills gradually in a safe way.",
+    category: "ethics",
+  },
+];

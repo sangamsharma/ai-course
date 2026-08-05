@@ -1,0 +1,162 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// === B2B Subscription Models ===
+
+model Organization {
+  id                   String              @id @default(cuid())
+  name                 String
+  slug                 String              @unique
+  plan                 String              @default("SMALL") // SMALL | MEDIUM | ENTERPRISE
+  employeeLimit        Int                 @default(25)
+  accessStatus         String              @default("ACTIVE") // ACTIVE | SUSPENDED | EXPIRED
+  stripeCustomerId     String?             @unique
+  stripeSubscriptionId String?             @unique
+  subscriptionStatus   String?             // ACTIVE | PAST_DUE | CANCELED | INCOMPLETE | TRIALING | UNPAID
+  renewalDate          DateTime?
+  isManuallyActivated  Boolean             @default(false)
+  createdAt            DateTime            @default(now())
+  updatedAt            DateTime            @updatedAt
+
+  members        Membership[]
+  invitations    Invitation[]
+  stripeEvents   StripeEvent[]
+  auditLogs      AuditLog[]
+}
+
+model User {
+  id              String       @id @default(cuid())
+  name            String?
+  email           String       @unique
+  emailVerified   DateTime?
+  image           String?
+  isPlatformAdmin Boolean      @default(false)
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  accounts        Account[]
+  sessions        Session[]
+  memberships     Membership[]
+  progress        UserProgress?
+  sentInvitations Invitation[] @relation("SentBy")
+
+  platformAdminAuditLogs AuditLog[] @relation("PlatformAdminActor")
+}
+
+model Membership {
+  id             String   @id @default(cuid())
+  role           String   @default("LEARNER") // ORG_OWNER | ORG_ADMIN | LEARNER
+  joinedAt       DateTime @default(now())
+  isActive       Boolean  @default(true)
+
+  userId         String
+  organizationId String
+
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, organizationId])
+}
+
+model Invitation {
+  id             String    @id @default(cuid())
+  email          String
+  token          String    @unique
+  role           String    @default("LEARNER")
+  expiresAt      DateTime
+  usedAt         DateTime?
+  createdAt      DateTime  @default(now())
+
+  organizationId String
+  invitedById    String
+
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  invitedBy      User         @relation("SentBy", fields: [invitedById], references: [id])
+}
+
+model UserProgress {
+  id                  String   @id @default(cuid())
+  completedLessons    String   @default("[]")
+  quizScores          String   @default("{}")
+  completedExercises  String   @default("[]")
+  earnedBadges        String   @default("[]")
+  completedScenarios  String   @default("[]")
+  completedChallenges String   @default("[]")
+  sandboxSessions     Int      @default(0)
+  capstoneCompleted   Boolean  @default(false)
+  lastVisited         DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  userId              String   @unique
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model StripeEvent {
+  id             String    @id @default(cuid())
+  stripeEventId  String    @unique
+  type           String
+  status         String    @default("pending") // pending | processed | failed
+  rawBody        String
+  createdAt      DateTime  @default(now())
+  processedAt    DateTime?
+
+  organizationId String?
+  organization   Organization? @relation(fields: [organizationId], references: [id])
+}
+
+model AuditLog {
+  id             String   @id @default(cuid())
+  action         String
+  actorId        String?
+  actor          User?    @relation("PlatformAdminActor", fields: [actorId], references: [id])
+  targetId       String?
+  metadata       String?
+  createdAt      DateTime @default(now())
+
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+}
+
+// === Auth.js Required Models ===
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}

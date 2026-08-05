@@ -1,0 +1,68 @@
+import type { VerificationChallenge } from "@/lib/types";
+
+export const verificationChallenges: VerificationChallenge[] = [
+  {
+    id: "easy-missing-source",
+    aiResponse: "According to a recent Harvard study, 87% of small businesses that use AI see a 40% increase in revenue within the first 3 months. The study surveyed 10,000 business owners across 50 countries.",
+    issues: ["unsupported-claim", "missing-source"],
+    correctIssues: ["unsupported-claim", "missing-source"],
+    explanation: "This response makes two suspicious claims: a very specific statistic (87%, 40%) and a massive survey (10,000 businesses, 50 countries). No link or publication name is provided. Real studies are cited with journal names, authors, and dates. Always ask: 'Can you provide the exact source for this study?'",
+    difficulty: "easy",
+  },
+  {
+    id: "easy-too-generic",
+    aiResponse: "To improve your business, you should focus on marketing, customer service, and innovation. These are the three pillars of success. Many successful companies use this approach and have seen great results.",
+    issues: ["too-generic"],
+    correctIssues: ["too-generic"],
+    explanation: "This response sounds helpful but is completely generic — it could apply to any business in any industry. There are no specific examples, no actionable steps, and no consideration of your unique situation. Good AI responses should be specific to YOUR context.",
+    difficulty: "easy",
+  },
+  {
+    id: "medium-hallucinated-quote",
+    aiResponse: "As Albert Einstein famously said, 'Artificial intelligence will be the most transformative technology of the 21st century, changing everything about how we work and live.' He predicted this in a 1952 letter to his colleague Niels Bohr.",
+    issues: ["hallucinated-quote", "unsupported-claim"],
+    correctIssues: ["hallucinated-quote", "unsupported-claim"],
+    explanation: "This quote is fabricated. Einstein died in 1955, long before AI as we know it existed. He never wrote about 'artificial intelligence' in a 1952 letter — this is a classic AI hallucination. Always verify famous quotes by searching for the exact wording.",
+    difficulty: "medium",
+  },
+  {
+    id: "medium-privacy-advice",
+    aiResponse: "To help you decide whether you should accept this job offer, please paste the full offer letter including the salary, benefits package, and your potential manager's name. I'll analyze it and tell you if it's a good deal.",
+    issues: ["privacy-risk", "unsafe-advice"],
+    correctIssues: ["privacy-risk", "unsafe-advice"],
+    explanation: "This AI response asks you to share a real job offer letter with sensitive details (salary, benefits, manager's name). This is a privacy risk — never paste real documents with personal information into AI. Instead, describe the offer in general terms.",
+    difficulty: "medium",
+  },
+  {
+    id: "hard-medical-overreach",
+    aiResponse: "Based on your description of chest pain, shortness of breath, and dizziness that started 3 days ago, this sounds like it could be angina or early-stage heart disease. I recommend taking aspirin daily and reducing your salt intake. If symptoms persist for another week, consider seeing a doctor.",
+    issues: ["medical-overreach", "unsafe-advice"],
+    correctIssues: ["medical-overreach", "unsafe-advice", "unsupported-claim"],
+    explanation: "This is dangerously bad AI advice. It attempts to diagnose a serious medical condition (angina/heart disease), recommends medication (aspirin), and suggests waiting a week — all of which are inappropriate. Chest pain with shortness of breath requires immediate medical attention, not AI consultation. AI should never give medical diagnoses or treatment recommendations.",
+    difficulty: "hard",
+  },
+  {
+    id: "medium-legal-overreach",
+    aiResponse: "Based on your description of being fired after reporting workplace safety violations, you have a strong case for wrongful termination. I recommend filing a lawsuit immediately. Here's a template for your legal complaint. You could receive $50,000-$200,000 in damages based on similar cases.",
+    issues: ["legal-overreach", "unsupported-claim"],
+    correctIssues: ["legal-overreach", "unsupported-claim", "unsafe-advice"],
+    explanation: "This AI response gives specific legal advice (file a lawsuit), provides a 'legal complaint template,' and estimates damages ($50K-$200K). AI cannot practice law — it doesn't know local labor laws, your employment contract, or the specific circumstances. For legal matters, consult a qualified attorney in your jurisdiction.",
+    difficulty: "medium",
+  },
+  {
+    id: "hard-inappropriate-tone",
+    aiResponse: "Your idea for a community prayer gathering to support families affected by the factory closure is nice, but you should focus on practical job training instead. Religious events don't create employment. Here's a more productive approach: organize a job skills workshop with local businesses.",
+    issues: ["inappropriate-tone", "too-generic"],
+    correctIssues: ["inappropriate-tone", "too-generic"],
+    explanation: "This response dismisses a culturally meaningful community initiative (prayer gathering) as unproductive and replaces it with generic advice (job workshop). The tone is dismissive and culturally insensitive. Good AI responses respect cultural context and build on community strengths, not dismiss them.",
+    difficulty: "hard",
+  },
+  {
+    id: "medium-fake-data",
+    aiResponse: "The unemployment rate in your city is currently 3.2%, which is below the national average of 4.1%. The median home price is $285,000, and the average salary for retail workers is $42,000 per year. I recommend investing in local real estate.",
+    issues: ["unsupported-claim", "missing-source"],
+    correctIssues: ["unsupported-claim", "missing-source"],
+    explanation: "This response gives very specific numbers (3.2%, $285,000, $42,000) without any source. AI training data may be months old — these numbers could be completely wrong. Always verify economic statistics with official sources (government websites, real estate databases).",
+    difficulty: "medium",
+  },
+];

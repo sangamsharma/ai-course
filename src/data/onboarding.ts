@@ -1,0 +1,123 @@
+import type { OnboardingRoute, HelpNeeded, ConfidenceLevel, LearningStyle, DeviceConstraint } from "@/lib/types";
+
+export const helpOptions: { value: HelpNeeded; label: string; icon: string }[] = [
+  { value: "writing", label: "Writing & Communication", icon: "Pen" },
+  { value: "planning", label: "Planning & Organizing", icon: "Calendar" },
+  { value: "learning", label: "Learning & Studying", icon: "BookOpen" },
+  { value: "business", label: "Business & Work", icon: "Briefcase" },
+  { value: "creative", label: "Creative Projects", icon: "Palette" },
+  { value: "other", label: "Just Curious / Other", icon: "Sparkles" },
+];
+
+export const confidenceOptions: { value: ConfidenceLevel; label: string; description: string }[] = [
+  { value: "very-low", label: "Brand New", description: "I've never used AI before" },
+  { value: "low", label: "Tried a Few Times", description: "I've experimented with ChatGPT or similar a few times" },
+  { value: "medium", label: "Comfortable", description: "I use AI regularly for some tasks" },
+  { value: "high", label: "Very Confident", description: "I use AI daily and want to refine my skills" },
+];
+
+export const learningStyleOptions: { value: LearningStyle; label: string; description: string }[] = [
+  { value: "reading", label: "Show Me Examples", description: "I learn best by seeing real examples" },
+  { value: "doing", label: "Let Me Practice", description: "I learn by trying things myself" },
+  { value: "watching", label: "Guide Me Step by Step", description: "I prefer following a clear sequence" },
+  { value: "mixed", label: "Mix It Up", description: "I like a combination of approaches" },
+];
+
+export const deviceOptions: { value: DeviceConstraint; label: string; description: string }[] = [
+  { value: "phone-only", label: "Phone Only", description: "I'll be using my smartphone" },
+  { value: "tablet", label: "Tablet", description: "I'll be using a tablet or iPad" },
+  { value: "desktop", label: "Desktop or Laptop", description: "I'll be using a computer" },
+  { value: "any", label: "Any Device", description: "I switch between devices" },
+];
+
+export const onboardingRoutes: OnboardingRoute[] = [
+  {
+    answers: { helpNeeded: ["writing"] },
+    suggestedModuleSlugs: ["ai-made-simple", "ai-for-everyday-tasks", "ai-for-personal-documents"],
+    suggestedScenarios: ["email-grammar", "resume-builder", "cover-letter-draft"],
+    message: "You'll benefit most from our writing-focused lessons. Start with AI Made Simple to learn the basics, then explore everyday writing tasks.",
+  },
+  {
+    answers: { helpNeeded: ["planning"] },
+    suggestedModuleSlugs: ["ai-made-simple", "ai-for-everyday-tasks"],
+    suggestedScenarios: ["event-planner", "meal-planner-scenario", "travel-itinerary"],
+    message: "AI is fantastic for planning and organization. These modules will teach you how to create event plans, meal plans, and travel itineraries in minutes.",
+  },
+  {
+    answers: { helpNeeded: ["learning"] },
+    suggestedModuleSlugs: ["ai-made-simple", "the-art-of-asking", "ai-for-personal-documents"],
+    suggestedScenarios: ["study-helper", "explain-complex", "language-practice"],
+    message: "AI makes a great study companion. Learn how to use it as a patient tutor that explains things in exactly the way you understand best.",
+  },
+  {
+    answers: { helpNeeded: ["business"] },
+    suggestedModuleSlugs: ["ai-made-simple", "ai-for-your-business", "the-art-of-asking"],
+    suggestedScenarios: ["social-media-post", "customer-response", "menu-designer"],
+    message: "For business owners, AI can save hours every week on marketing, customer communication, and planning. Start here to get practical skills you can use today.",
+  },
+  {
+    answers: { helpNeeded: ["creative"] },
+    suggestedModuleSlugs: ["ai-made-simple", "the-art-of-asking", "ai-for-personal-documents"],
+    suggestedScenarios: ["bedtime-story", "wedding-speech", "social-media-post"],
+    message: "AI is a wonderful creative partner. Learn to write stories, speeches, poems, and creative content with AI as your co-creator.",
+  },
+  {
+    answers: { helpNeeded: ["other"] },
+    suggestedModuleSlugs: ["ai-made-simple", "the-art-of-asking"],
+    suggestedScenarios: ["general-assistant"],
+    message: "Welcome! Start with the basics and discover how AI can help with whatever matters most to you. There's something here for everyone.",
+  },
+  {
+    answers: { confidence: "very-low" },
+    suggestedModuleSlugs: ["ai-made-simple"],
+    suggestedScenarios: ["first-prompt", "explain-simple"],
+    message: "No worries at all — this course is built exactly for you. We'll start from the very beginning with simple explanations and friendly practice exercises.",
+  },
+  {
+    answers: { confidence: "low" },
+    suggestedModuleSlugs: ["ai-made-simple", "the-art-of-asking"],
+    suggestedScenarios: ["email-grammar", "summarize-article"],
+    message: "You've got some experience, which is a great foundation. Let's build on that with better prompting techniques and practical scenarios.",
+  },
+  {
+    answers: { confidence: "medium" },
+    suggestedModuleSlugs: ["the-art-of-asking", "ai-for-everyday-tasks", "ai-for-your-business"],
+    suggestedScenarios: ["customer-response", "social-media-post", "resume-builder"],
+    message: "You're comfortable with AI — let's take it to the next level. These modules will help you use AI more strategically and efficiently.",
+  },
+  {
+    answers: { confidence: "high" },
+    suggestedModuleSlugs: ["the-art-of-asking", "ai-for-your-business"],
+    suggestedScenarios: ["verification-check", "tool-chooser-scenario"],
+    message: "You're already skilled. Focus on advanced prompting techniques, verification skills, and applying AI to real business situations.",
+  },
+];
+
+export function getSuggestedRoute(answers: { helpNeeded?: HelpNeeded[]; confidence?: ConfidenceLevel | null }): OnboardingRoute {
+  // Find best match based on answers
+  let bestMatch = onboardingRoutes[5]; // default: "other"
+
+  // Match by help needed first
+  if (answers.helpNeeded && answers.helpNeeded.length > 0) {
+    const match = onboardingRoutes.find(
+      (r) => r.answers.helpNeeded && r.answers.helpNeeded.some((h) => answers.helpNeeded!.includes(h))
+    );
+    if (match) bestMatch = match;
+  }
+
+  // Refine by confidence
+  if (answers.confidence) {
+    const confMatch = onboardingRoutes.find((r) => r.answers.confidence === answers.confidence);
+    if (confMatch) {
+      // Merge suggestions from help-needed and confidence match
+      bestMatch = {
+        ...bestMatch,
+        ...confMatch,
+        suggestedModuleSlugs: [...new Set([...bestMatch.suggestedModuleSlugs, ...confMatch.suggestedModuleSlugs])],
+        suggestedScenarios: [...new Set([...bestMatch.suggestedScenarios, ...confMatch.suggestedScenarios])],
+      };
+    }
+  }
+
+  return bestMatch;
+}

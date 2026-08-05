@@ -1,0 +1,60 @@
+import type { Badge } from "@/lib/types";
+
+export const badges: Badge[] = [
+  {
+    id: "starter",
+    name: "AI Starter",
+    description: "Completed onboarding and tried your first exercise",
+    icon: "Rocket",
+    condition: "Complete the onboarding diagnostic and finish 1 exercise",
+    requiredActions: ["onboarding", "exercise:1"],
+  },
+  {
+    id: "better-prompter",
+    name: "Better Prompter",
+    description: "Used the prompt builder to create effective prompts",
+    icon: "PenLine",
+    condition: "Use the prompt builder 3 times",
+    requiredActions: ["prompt-builder:3"],
+  },
+  {
+    id: "privacy-aware",
+    name: "Privacy Aware",
+    description: "Acknowledged privacy warnings and completed safety training",
+    icon: "ShieldCheck",
+    condition: "Acknowledge privacy dialog and read 3 safety tips",
+    requiredActions: ["privacy-acknowledged", "safety-tips:3"],
+  },
+  {
+    id: "fact-checker",
+    name: "Fact Checker",
+    description: "Completed verification challenges to spot AI mistakes",
+    icon: "SearchCheck",
+    condition: "Complete 3 verification challenges",
+    requiredActions: ["verification:3"],
+  },
+  {
+    id: "work-assistant",
+    name: "Work Assistant",
+    description: "Completed a workplace or business scenario",
+    icon: "Briefcase",
+    condition: "Complete 1 business or workplace scenario",
+    requiredActions: ["scenario:1"],
+  },
+  {
+    id: "daily-life-assistant",
+    name: "Daily Life Assistant",
+    description: "Completed 3 daily-life scenarios",
+    icon: "Home",
+    condition: "Complete 3 daily-life category scenarios",
+    requiredActions: ["daily-life:3"],
+  },
+  {
+    id: "ready-for-real-use",
+    name: "Ready for Real Use",
+    description: "Completed the capstone: applied AI to your own situation",
+    icon: "Trophy",
+    condition: "Complete the Bring Your Own Situation capstone",
+    requiredActions: ["capstone"],
+  },
+];
