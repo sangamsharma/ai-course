@@ -1,16 +1,16 @@
 import type { Module } from "@/lib/types";
 
-export const module06: Module = {
+export const module02: Module = {
   id: "be-smart-stay-safe",
   slug: "be-smart-stay-safe",
-  title: "Be Smart, Stay Safe",
+  title: "Stay Safe, Spot Mistakes",
   shortTitle: "Stay Safe",
   description:
-    "Learn what NOT to share with AI, understand privacy basics, spot AI mistakes, use AI ethically, and build good AI habits for life.",
+    "Learn what NOT to share with AI, understand privacy basics, spot AI mistakes, and use AI ethically — your safety toolkit for everything else in this course.",
   icon: "ShieldCheck",
   color: "rose",
   estimatedMinutes: 45,
-  order: 6,
+  order: 2,
   lessons: [
     // Lesson 1: Privacy
     {
@@ -214,7 +214,7 @@ export const module06: Module = {
       title: "Fact-Checking AI Output",
       subtitle: "A simple system to verify AI information before you use it",
       order: 4,
-      estimatedMinutes: 8,
+      estimatedMinutes: 10,
       content: [
         {
           type: "text",
@@ -250,6 +250,19 @@ export const module06: Module = {
           explanation:
             "For high-risk decisions (investments, health, legal matters), only a qualified human professional should give the final advice. AI can help you understand options, but real expertise — with accountability — is irreplaceable.",
         },
+        {
+          type: "prompt-playground",
+          id: "m6-pp-verify-challenge",
+          title: "Put the 3-Step Check to Work on a Real Example",
+          instruction:
+            "Here's something an AI actually said: \"According to a recent Harvard study, 87% of small businesses that use AI see a 40% increase in revenue within the first 3 months. The study surveyed 10,000 business owners across 50 countries.\" Apply the 3-step check (Sense Check → Source Check → Second Opinion) to this claim. Write down what you notice at each step, then decide: would you trust and repeat this claim, or not?",
+          promptHint:
+            "Sense Check: does this specific a number, from a single study, covering 50 countries, sound realistic? Source Check: is there a study name, journal, or link given anywhere? Second Opinion: what would you ask a different AI tool to check?",
+          sampleResponse:
+            "Sense Check: an 87% success rate and a precise '40% revenue increase' from one study is suspiciously exact — real research results are rarely this clean. Source Check: no journal name, no author, no link, no date is given anywhere in the claim — that's a red flag on its own. Second Opinion: I'd ask a different AI tool, 'Can you find the exact source for a Harvard study claiming 87% of small businesses using AI see a 40% revenue increase? Give me the study title, authors, and year, or tell me if you can't find one.' If it can't produce a real citation, treat the original claim as made up.",
+          improvementTip:
+            "This is a real example from the course's own verification-challenge library — it's specifically designed to sound convincing while being unsourced and almost certainly fabricated. Notice that you didn't need any special expertise to catch it — just the habit of asking 'where's this actually from?' before repeating a number.",
+        },
       ],
       keyTakeaways: [
         "3-step system: Sense Check → Source Check → Second Opinion",
@@ -270,7 +283,7 @@ export const module06: Module = {
       content: [
         {
           type: "text",
-          body: "Congratulations! You've completed the full course. Let's end with 10 simple habits that will keep you safe, effective, and confident as you continue your AI journey.",
+          body: "You've now got the full safety toolkit: what not to share, how to spot mistakes, how to use AI honestly, and how to fact-check what it tells you. Let's end with 10 simple habits that will keep you safe, effective, and confident through everything still ahead in this course — 7 more Levels of real, practical AI skills.",
         },
         {
           type: "bullet-list",
@@ -291,8 +304,8 @@ export const module06: Module = {
         {
           type: "tip-box",
           variant: "example",
-          title: "You Did It! 🎉",
-          body: "You started this course curious but uncertain. Now you have: a solid understanding of what AI is, the ability to write effective prompts, practical skills for everyday and business tasks, and the wisdom to use AI safely and ethically. These skills will serve you for years to come. Welcome to the AI-powered future — you're ready for it!",
+          title: "Level 2 down, 7 to go 🎉",
+          body: "You now have a real safety toolkit: what to keep private, how to catch a made-up fact, how to use AI honestly, and a simple system to verify anything important. Keep these 10 habits in the back of your mind as you move on — every Level from here builds real, everyday skills on top of this foundation.",
         },
       ],
       exercises: [

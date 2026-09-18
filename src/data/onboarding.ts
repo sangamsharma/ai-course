@@ -33,21 +33,21 @@ export const deviceOptions: { value: DeviceConstraint; label: string; descriptio
 export const onboardingRoutes: OnboardingRoute[] = [
   {
     answers: { helpNeeded: ["writing"] },
-    suggestedModuleSlugs: ["ai-made-simple", "ai-for-everyday-tasks", "ai-for-personal-documents"],
-    suggestedScenarios: ["email-grammar", "resume-builder", "cover-letter-draft"],
-    message: "You'll benefit most from our writing-focused lessons. Start with AI Made Simple to learn the basics, then explore everyday writing tasks.",
+    suggestedModuleSlugs: ["ai-made-simple", "ai-for-everyday-tasks"],
+    suggestedScenarios: ["email-grammar", "resume-builder", "meeting-summary"],
+    message: "You'll benefit most from our writing-focused lessons. Start with Level 1 to learn the basics, then explore everyday writing tasks in Level 4.",
   },
   {
     answers: { helpNeeded: ["planning"] },
     suggestedModuleSlugs: ["ai-made-simple", "ai-for-everyday-tasks"],
-    suggestedScenarios: ["event-planner", "meal-planner-scenario", "travel-itinerary"],
-    message: "AI is fantastic for planning and organization. These modules will teach you how to create event plans, meal plans, and travel itineraries in minutes.",
+    suggestedScenarios: ["event-planner", "meal-planner-scenario"],
+    message: "AI is fantastic for planning and organization. Level 4 teaches you how to create event plans, meal plans, trip itineraries, and a simple budget in minutes.",
   },
   {
     answers: { helpNeeded: ["learning"] },
-    suggestedModuleSlugs: ["ai-made-simple", "the-art-of-asking", "ai-for-personal-documents"],
-    suggestedScenarios: ["study-helper", "explain-complex", "language-practice"],
-    message: "AI makes a great study companion. Learn how to use it as a patient tutor that explains things in exactly the way you understand best.",
+    suggestedModuleSlugs: ["ai-made-simple", "the-art-of-asking", "work-with-your-files"],
+    suggestedScenarios: ["study-helper", "language-practice"],
+    message: "AI makes a great study companion. Level 3 teaches the Feynman Technique — using AI as a patient tutor that explains things and checks your understanding.",
   },
   {
     answers: { helpNeeded: ["business"] },
@@ -57,26 +57,26 @@ export const onboardingRoutes: OnboardingRoute[] = [
   },
   {
     answers: { helpNeeded: ["creative"] },
-    suggestedModuleSlugs: ["ai-made-simple", "the-art-of-asking", "ai-for-personal-documents"],
-    suggestedScenarios: ["bedtime-story", "wedding-speech", "social-media-post"],
-    message: "AI is a wonderful creative partner. Learn to write stories, speeches, poems, and creative content with AI as your co-creator.",
+    suggestedModuleSlugs: ["ai-made-simple", "the-art-of-asking", "creative-and-multimodal"],
+    suggestedScenarios: ["social-media-post"],
+    message: "AI is a wonderful creative partner. Level 8 teaches you to write stories, speeches, and poems, try voice mode, and generate images with AI as your co-creator.",
   },
   {
     answers: { helpNeeded: ["other"] },
     suggestedModuleSlugs: ["ai-made-simple", "the-art-of-asking"],
-    suggestedScenarios: ["general-assistant"],
+    suggestedScenarios: [],
     message: "Welcome! Start with the basics and discover how AI can help with whatever matters most to you. There's something here for everyone.",
   },
   {
     answers: { confidence: "very-low" },
     suggestedModuleSlugs: ["ai-made-simple"],
-    suggestedScenarios: ["first-prompt", "explain-simple"],
+    suggestedScenarios: ["email-grammar"],
     message: "No worries at all — this course is built exactly for you. We'll start from the very beginning with simple explanations and friendly practice exercises.",
   },
   {
     answers: { confidence: "low" },
     suggestedModuleSlugs: ["ai-made-simple", "the-art-of-asking"],
-    suggestedScenarios: ["email-grammar", "summarize-article"],
+    suggestedScenarios: ["email-grammar", "meeting-summary"],
     message: "You've got some experience, which is a great foundation. Let's build on that with better prompting techniques and practical scenarios.",
   },
   {
@@ -87,9 +87,9 @@ export const onboardingRoutes: OnboardingRoute[] = [
   },
   {
     answers: { confidence: "high" },
-    suggestedModuleSlugs: ["the-art-of-asking", "ai-for-your-business"],
-    suggestedScenarios: ["verification-check", "tool-chooser-scenario"],
-    message: "You're already skilled. Focus on advanced prompting techniques, verification skills, and applying AI to real business situations.",
+    suggestedModuleSlugs: ["the-art-of-asking", "ai-for-your-business", "advanced-prompting"],
+    suggestedScenarios: ["farm-planning"],
+    message: "You're already skilled. Level 9's advanced prompting techniques, plus verification skills and real business scenarios, are where you'll get the most value.",
   },
 ];
 

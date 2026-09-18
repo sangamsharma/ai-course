@@ -1,16 +1,16 @@
 import type { Module } from "@/lib/types";
 
-export const module04: Module = {
+export const module07: Module = {
   id: "ai-for-your-business",
   slug: "ai-for-your-business",
-  title: "AI for Your Business",
+  title: "Work & Small Business Tasks",
   shortTitle: "Business AI",
   description:
-    "Create social media content, design menus and flyers, write customer emails, draft proposals, plan marketing strategy, and use AI for visuals — all tailored to your business.",
+    "Create social media content, menus and flyers, customer emails, proposals, and marketing plans — plus resumes, cover letters, and interview prep for job hunting.",
   icon: "Briefcase",
   color: "violet",
-  estimatedMinutes: 65,
-  order: 4,
+  estimatedMinutes: 90,
+  order: 7,
   lessons: [
     // Lesson 1: Social Media
     {
@@ -178,7 +178,7 @@ Create a simple table format I can use to track all this. Also suggest table gro
       id: "m4-customer",
       slug: "customer-communication",
       moduleId: "ai-for-your-business",
-      title: "Customer Emails & Communication",
+      title: "Customer Emails & Reviews",
       subtitle: "Handle complaints, thank-you notes, and follow-ups professionally every time",
       order: 3,
       estimatedMinutes: 10,
@@ -213,9 +213,9 @@ Do NOT sound: [defensive / angry / robotic].`,
         },
         {
           type: "tip-box",
-          variant: "tip",
-          title: "Save Templates for Consistency",
-          body: "Create 3-5 templates for your most common customer situations (complaint, thank you, follow-up, welcome, goodbye). This ensures every customer gets a consistent, professional experience — no matter who on your team is responding.",
+          variant: "warning",
+          title: "Keep It Private",
+          body: "Paste the general issue, not a customer's full name, account number, or order details — describe the situation ('a customer complained about a late delivery') rather than the identifying specifics. Create 3-5 templates for your most common situations (complaint, thank you, follow-up, welcome, goodbye) so every customer gets a consistent, professional experience.",
         },
       ],
       exercises: [
@@ -235,7 +235,7 @@ Do NOT sound: [defensive / angry / robotic].`,
       ],
       keyTakeaways: [
         "AI helps you stay calm and professional in difficult customer situations",
-        "Paste the actual customer message for the most relevant response",
+        "Paste the general situation, not identifying customer details",
         "Create templates for common situations — consistency builds trust",
         "Always personalize AI drafts — add your genuine voice",
       ],
@@ -362,7 +362,7 @@ Please provide:
       content: [
         {
           type: "text",
-          body: "AI tools can now help with the visual side of your business — generating images, suggesting designs, and writing image prompts for tools like Canva, Midjourney, and DALL-E. Even if you're not artistic, you can create professional-looking visuals for your business.",
+          body: "AI tools can now help with the visual side of your business — generating images, suggesting designs, and writing image prompts for tools like Canva and other image generators. Even if you're not artistic, you can create professional-looking visuals for your business. (Level 8 has a full hands-on lesson on generating images — this is the quick business-focused version.)",
         },
         {
           type: "bullet-list",
@@ -379,7 +379,7 @@ Please provide:
         },
         {
           type: "code-example",
-          title: "Image Generation Prompt (for Canva, DALL-E, Gemini):",
+          title: "Image Generation Prompt (for Canva, Gemini, or your chosen tool):",
           code: `A professional product photo of [item] on a [surface/background]. [Lighting description]. [Style/mood]. Clean, high-quality, suitable for [use — social media/website/menu].`,
           language: "text",
         },
@@ -387,7 +387,7 @@ Please provide:
           type: "tip-box",
           variant: "tip",
           title: "The AI + Canva Workflow",
-          body: "Step 1: Use AI (ChatGPT or Claude) to write all your text — descriptions, headings, taglines. Step 2: Use Canva's AI features (Magic Design) — paste your text and it suggests templates. Step 3: Use Gemini or ChatGPT to generate images if needed. Step 4: Assemble everything in Canva. You've just created professional marketing materials without hiring a designer.",
+          body: "Step 1: Use AI (ChatGPT or Claude) to write all your text — descriptions, headings, taglines. Step 2: Use Canva's AI features (Magic Design) — paste your text and it suggests templates. Step 3: Use Gemini or your chosen tool to generate images if needed. Step 4: Assemble everything in Canva. You've just created professional marketing materials without hiring a designer.",
         },
       ],
       exercises: [
@@ -408,9 +408,120 @@ Please provide:
       keyTakeaways: [
         "AI helps with both text AND visual content for your business",
         "Combine AI writing + Canva design for professional results",
-        "Gemini and ChatGPT can generate images with text prompts",
         "You don't need design skills to create great-looking materials",
       ],
+    },
+    // Lesson 7: Resume & Cover Letter (moved from the old Personal Documents module)
+    {
+      id: "m5-resume",
+      slug: "resume-writing",
+      moduleId: "ai-for-your-business",
+      title: "Resume, Cover Letter & Interview Prep",
+      subtitle: "Turn your work history into a compelling application — and walk into the interview ready",
+      order: 7,
+      estimatedMinutes: 14,
+      content: [
+        {
+          type: "text",
+          body: "Writing about yourself is hard. AI makes it easy by transforming your raw experience into polished, professional documents. You provide the facts — AI handles the phrasing, formatting, and persuasive language.",
+        },
+        {
+          type: "tip-box",
+          variant: "warning",
+          title: "Privacy first",
+          body: "Remove your name, address, phone number, and real employer names before pasting your resume into AI. Use placeholders like '[Current Employer]', '[City]', and '[Name]' instead — then add your real details back in after AI helps with the content.",
+        },
+        {
+          type: "code-example",
+          title: "Resume Bullet Point Prompt:",
+          code: `Help me write resume bullet points for my role as [job title] at [company name/type].
+My responsibilities included:
+1. [responsibility]
+2. [responsibility]
+3. [responsibility]
+(continue)
+
+For each bullet:
+- Start with a strong action verb (managed, created, led, improved, reduced)
+- Include numbers or measurable results where possible
+- Keep each bullet to 1-2 lines
+- Target the role of [job you're applying for]`,
+          language: "text",
+        },
+        {
+          type: "code-example",
+          title: "Cover Letter Prompt:",
+          code: `Write a cover letter for a [job title] position at [company name].
+About me: [2-3 sentences — experience, skills, achievements].
+Why this company: [what you admire about them].
+Why I'm a good fit: [how your skills match their needs].
+Tone: professional but warm. Keep to 3 short paragraphs.
+Format: greeting, introduction, body, closing.`,
+          language: "text",
+        },
+        {
+          type: "tip-box",
+          variant: "important",
+          title: "Critical Reminder",
+          body: "AI drafts are a starting point, not a final product. Always: 1) Fact-check every detail — AI can invent achievements you never had. 2) Add your personal voice — employers can spot generic AI-written applications. 3) Customize for each application — a tailored resume gets more interviews.",
+        },
+      ],
+      exercises: [
+        {
+          type: "prompt-playground",
+          id: "m5-pp-resume",
+          title: "Transform Your Experience into Resume Bullets",
+          instruction:
+            "Think of your current or most recent job. List 3 responsibilities in plain language, then write a prompt asking AI to turn them into powerful resume bullets.",
+          promptHint:
+            "Turn these job duties into resume bullet points for a [job title] role: 1) Answered phone calls and emails from customers. 2) Organized the office filing system. 3) Helped train new employees...",
+          sampleResponse:
+            "• Managed high-volume customer communications, handling 50+ daily phone calls and emails with 98% satisfaction rating\n• Redesigned and digitized office filing system, reducing document retrieval time by 60% and saving 5 hours per week\n• Developed and delivered onboarding training program for 12 new hires, reducing their ramp-up time from 4 weeks to 2 weeks\n\nNotice how 'answered phone calls' became 'Managed high-volume customer communications' — the AI adds professional language and quantified impact while keeping the truth intact.",
+          improvementTip:
+            "The key to great resume bullets is quantifying your impact. Always add numbers when you can: how many customers, how much time saved, how much money earned or saved. AI helps you phrase it professionally.",
+        },
+        {
+          type: "quiz",
+          id: "m5-q1-resume",
+          question: "What's the #1 thing to do after AI drafts your resume?",
+          options: [
+            { id: "a", text: "Send it immediately to save time", isCorrect: false },
+            { id: "b", text: "Fact-check every detail and add your personal voice", isCorrect: true },
+            { id: "c", text: "Use the same version for every job application", isCorrect: false },
+            { id: "d", text: "Remove all numbers and metrics to keep it simple", isCorrect: false },
+          ],
+          explanation:
+            "Always fact-check and personalize AI drafts. AI can invent achievements or use generic language. Your resume needs to be truthful and sound like you. Also customize for each job — different roles value different skills.",
+        },
+      ],
+      keyTakeaways: [
+        "Anonymize your resume before pasting it into AI",
+        "Add numbers and measurable results — they make bullets convincing",
+        "Always fact-check and personalize AI drafts",
+        "Customize your resume and cover letter for each job application",
+      ],
+    },
+    // Lesson 8: Interview Preparation (moved from the old Job Search module)
+    {
+      id: "m11-interview",
+      slug: "interview-prep",
+      moduleId: "ai-for-your-business",
+      title: "Interview Preparation",
+      subtitle: "Practice interview questions, prepare your answers, and research companies",
+      order: 8,
+      estimatedMinutes: 10,
+      content: [
+        { type: "text", body: "AI is an excellent interview coach. It generates likely questions for your role, helps you structure answers using proven frameworks, and can even role-play as the interviewer. You can practice as many times as you want — without embarrassment." },
+        { type: "code-example", title: "Interview Prep Prompt:", code: `I have an interview for a [job title] position at a [industry] company. The job description emphasizes: [key requirements]. Help me prepare:
+1. Generate 10 likely interview questions (mix of behavioral and technical)
+2. For each question, suggest a structure for answering (STAR method)
+3. List 5 questions I should ask them
+4. Role-play as the interviewer: ask me one question at a time. I'll respond, then you give feedback.`, language: "text" },
+      ],
+      exercises: [
+        { type: "fill-in-blank", id: "m11-fib-interview", title: "Prepare Your Interview Prompt", instruction: "Fill in the template for a job you might apply for.", template: "I have an interview for a {{role}} position at a {{industry}} company. Key requirements: {{requirements}}. Generate 10 likely interview questions and suggest how to structure answers using the STAR method.", blanks: [{ key: "role", answer: "customer service", hint: "Job title?" }, { key: "industry", answer: "retail", hint: "Industry?" }, { key: "requirements", answer: "team leadership and problem solving", hint: "Top skills needed?" }] },
+      ],
+      keyTakeaways: ["AI generates realistic interview questions for your specific role", "Practice answers out loud — the AI can simulate the interviewer", "Prepare thoughtful questions to ask the employer"],
     },
   ],
 };

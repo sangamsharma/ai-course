@@ -1,6 +1,6 @@
 import type { Module } from "@/lib/types";
 
-export const module19: Module = {
+export const microsoftCopilotModule: Module = {
   id: "microsoft-copilot",
   slug: "microsoft-copilot",
   title: "Microsoft 365 Copilot",
@@ -9,7 +9,7 @@ export const module19: Module = {
   icon: "Sparkles",
   color: "violet",
   estimatedMinutes: 55,
-  order: 19,
+  order: 1,
   lessons: [
     {
       id: "m19-subscription",

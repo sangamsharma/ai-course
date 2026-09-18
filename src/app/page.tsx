@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { AnimatedEntry } from "@/components/shared/animated-entry";
 import { StaggerList, ScrollReveal, PulseButton, FloatingElement } from "@/components/shared/motion-components";
 import { ModuleCard } from "@/components/course/module-card";
+import { IntegrationCard, Integration } from "@/components/ui/integration-card";
 import { modules, courseStats } from "@/data/modules";
 import { cn } from "@/lib/utils";
 import {
@@ -129,6 +130,31 @@ export default function Home() {
             </ScrollReveal>
           ))}
         </StaggerList>
+      </section>
+
+      {/* Tool Integration Showcase */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <AnimatedEntry>
+          <div className="text-center mb-12">
+            <Badge variant="secondary" className="mb-4">
+              Works With Your Tools
+            </Badge>
+            <h2 className="text-4xl font-bold mb-4">One Course, Every AI Tool</h2>
+            <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+              Learn the skills once — then apply them to whichever assistant you already use.
+            </p>
+          </div>
+        </AnimatedEntry>
+
+        <ScrollReveal>
+          <IntegrationCard
+            visual={<Integration />}
+            title="Works With the AI Tools You Already Have"
+            description="ChatGPT, Claude, or Gemini — this course shows you how to use them for real, everyday tasks like email and documents."
+            url="/tools"
+            cta="Compare the Tools"
+          />
+        </ScrollReveal>
       </section>
 
       {/* Module Overview Grid */}

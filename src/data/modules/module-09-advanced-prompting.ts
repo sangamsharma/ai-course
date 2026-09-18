@@ -1,15 +1,15 @@
 import type { Module } from "@/lib/types";
 
-export const module07: Module = {
+export const module09: Module = {
   id: "advanced-prompting",
   slug: "advanced-prompting",
-  title: "Advanced Prompting Techniques",
+  title: "Advanced Prompting for Bigger Projects",
   shortTitle: "Advanced Prompting",
-  description: "Chain prompts together, use multi-step reasoning, and master advanced strategies like few-shot learning and chain-of-thought.",
+  description: "Chain prompts together, use multi-step reasoning, master few-shot and chain-of-thought techniques, and run a full 7-step pipeline for projects too big for one prompt. Optional — for confident learners ready to go further.",
   icon: "Zap",
   color: "violet",
-  estimatedMinutes: 45,
-  order: 7,
+  estimatedMinutes: 55,
+  order: 9,
   lessons: [
     {
       id: "m07-chained",
@@ -106,7 +106,7 @@ Customer: "[your actual customer message here]"`, language: "text" },
       order: 4,
       estimatedMinutes: 11,
       content: [
-        { type: "text", body: "You've learned basic personas (Module 2). Now take it further: create multiple personas in the same conversation, have them debate each other, or simulate how different audiences would react to your content. This turns AI into a powerful thinking tool for testing ideas before they go live." },
+        { type: "text", body: "You've learned basic personas (Level 3). Now take it further: create multiple personas in the same conversation, have them debate each other, or simulate how different audiences would react to your content. This turns AI into a powerful thinking tool for testing ideas before they go live." },
         { type: "code-example", title: "Expert Panel Prompt:", code: `I want you to act as a panel of 3 experts reviewing my business idea. Respond as each expert in turn:
 
 Expert 1 — A Financial Advisor: Focus on costs, revenue potential, funding needs, and financial risks.
@@ -121,6 +121,66 @@ Each expert, give your honest assessment in 2-3 sentences. Then have them briefl
         { type: "prompt-playground", id: "m07-pp-panel", title: "Create an Expert Panel", instruction: "Think of a decision you're facing. Create a prompt for an expert panel of 2-3 roles that would help you think through it.", promptHint: "I want to decide whether to [decision]. Create a panel of [roles] to advise me.", sampleResponse: "For deciding whether to start a side business: Expert 1 — Accountant (tax implications, startup costs), Expert 2 — Someone who did it (time management tips, realistic expectations), Expert 3 — Potential customer (would they pay for this?).", improvementTip: "The more specific the expert roles, the more useful the feedback. Name real concerns each expert would have." },
       ],
       keyTakeaways: ["Use multiple personas to stress-test ideas from different angles", "Panel prompts give you diverse perspectives in one conversation", "Devil's advocate personas help find flaws before they cost you", "Simulated audiences let you test messages before sending them"],
+    },
+    // Lesson 5: The 7-Step Pipeline (moved from the old Art of Asking module)
+    {
+      id: "m2-pipeline",
+      slug: "ai-pipeline",
+      moduleId: "advanced-prompting",
+      title: "The 7-Step AI Pipeline",
+      subtitle: "A professional workflow for complex tasks — from idea to finished product",
+      order: 5,
+      estimatedMinutes: 10,
+      content: [
+        {
+          type: "text",
+          body: "For simple tasks (write an email, summarize this), a single prompt is enough. But for bigger projects — a marketing plan, an event, a business proposal — professionals use a multi-step pipeline. Here's the 7-step framework used by expert AI users, pulling together everything else in this Level: chaining, few-shot, chain-of-thought, and personas, all at once.",
+        },
+        {
+          type: "bullet-list",
+          title: "The 7-Step AI Production Pipeline",
+          items: [
+            "Step 1: DEFINE — Clearly state your goal and what success looks like.",
+            "Step 2: DECOMPOSE — Break the big task into smaller sub-tasks the AI can handle one at a time.",
+            "Step 3: GENERATE — Run each sub-task through AI with specific prompts. Get multiple versions of important outputs.",
+            "Step 4: CRITIQUE — Ask the AI to review its own output: 'What's wrong with this? What could be improved?'",
+            "Step 5: ITERATE — Use the AI's own feedback to improve. 'Based on your suggestions, rewrite this to fix issues 1, 2, and 3.'",
+            "Step 6: ASSEMBLE — Combine all the improved pieces into your final document or plan.",
+            "Step 7: AUTOMATE — Save the prompt chain as a template for next time.",
+          ],
+        },
+        {
+          type: "tip-box",
+          variant: "example",
+          title: "Real Example: Planning a Customer Appreciation Event",
+          body: "Step 1: 'I want to plan a customer appreciation dinner for 30 people, budget $3,000.' → Step 2: Break into venue ideas, menu planning, invitation email, timeline. → Step 3: AI generates each piece. → Step 4: 'Review this event plan and point out 3 problems or missing things.' → Step 5: Fix the issues. → Step 6: Combine everything into a final Event Plan document. → Step 7: Save the prompt chain for next year's event.",
+        },
+        {
+          type: "text",
+          body: "This pipeline might sound like a lot, but for big tasks it actually saves time and produces much better results than struggling with one giant, vague prompt.",
+        },
+      ],
+      exercises: [
+        {
+          type: "quiz",
+          id: "m2-q4-pipeline",
+          question: "In the 7-step AI Pipeline, what comes right after generating output?",
+          options: [
+            { id: "a", text: "Assemble the final product", isCorrect: false },
+            { id: "b", text: "Ask AI to critique its own output", isCorrect: true },
+            { id: "c", text: "Automate for future use", isCorrect: false },
+            { id: "d", text: "Define the goal more clearly", isCorrect: false },
+          ],
+          explanation:
+            "After generating output, the next step is CRITIQUE — ask the AI to review its own work and point out problems. This self-criticism step is what separates amateur from professional AI use. Then you ITERATE (fix the issues) before ASSEMBLING the final product.",
+        },
+      ],
+      keyTakeaways: [
+        "Simple tasks = single prompt. Big projects = multi-step pipeline",
+        "7 steps: Define → Decompose → Generate → Critique → Iterate → Assemble → Automate",
+        "Self-critique is the secret weapon — AI can review and improve its own output",
+        "Save successful prompt chains as templates (Step 7 = efficiency forever)",
+      ],
     },
   ],
 };

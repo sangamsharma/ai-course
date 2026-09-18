@@ -8,11 +8,11 @@ import { ArrowRight, Pen, MessageSquare, Lightbulb } from "lucide-react";
 
 const practiceAreas = [
   {
-    title: "Module 1: AI Made Simple",
-    description: "Practice explaining AI to a 10-year-old, set up your AI accounts, and test your knowledge with quizzes.",
+    title: "Level 1: Your First Win With AI",
+    description: "Pick one AI tool, write your first prompt, and walk away with a real result inside 20 minutes.",
     icon: "✨",
     href: "/modules/ai-made-simple",
-    exercises: "4 lessons with exercises",
+    exercises: "5 lessons with exercises",
   },
   {
     title: "Prompt Playground",
@@ -29,25 +29,25 @@ const practiceAreas = [
     exercises: "10+ templates",
   },
   {
-    title: "Module 2: The Art of Asking",
-    description: "Coming soon — master prompt formulas, persona patterns, and specificity techniques.",
+    title: "Level 3: Ask Better, Every Time",
+    description: "Master the 5-part prompt formula, the Persona Pattern, and reusable templates.",
     icon: "💬",
     href: "/modules/the-art-of-asking",
-    exercises: "Coming soon",
+    exercises: "5 lessons with exercises",
   },
   {
-    title: "Module 3: AI for Everyday Tasks",
-    description: "Coming soon — practice writing emails, summarizing articles, and planning events.",
+    title: "Level 4: Everyday Writing, Planning & Money",
+    description: "Practice writing emails, summarizing articles, planning events, and budgeting.",
     icon: "📧",
     href: "/modules/ai-for-everyday-tasks",
-    exercises: "Coming soon",
+    exercises: "10 lessons with exercises",
   },
   {
-    title: "Module 4: AI for Your Business",
-    description: "Coming soon — create social media posts, menu cards, and customer communications.",
+    title: "Level 7: Work & Small Business Tasks",
+    description: "Create social media posts, menu cards, customer communications, resumes, and interview prep.",
     icon: "💼",
     href: "/modules/ai-for-your-business",
-    exercises: "Coming soon",
+    exercises: "8 lessons with exercises",
   },
 ];
 
@@ -93,13 +93,13 @@ export default function PracticePage() {
         <div className="text-center mt-12 p-8 rounded-2xl bg-primary/5 border">
           <h2 className="text-2xl font-bold mb-3">Ready to start?</h2>
           <p className="text-muted-foreground mb-6">
-            Begin with Module 1 — it&apos;s the easiest and most important.
+            Begin with Level 1 — it&apos;s the easiest and most important.
           </p>
           <Link
             href="/modules/ai-made-simple"
             className={cn(buttonVariants({ variant: "default", size: "lg" }))}
           >
-            Go to Module 1 <ArrowRight className="ml-2 h-4 w-4" />
+            Go to Level 1 <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </div>
       </AnimatedEntry>

@@ -56,9 +56,9 @@ export default function AboutPage() {
             everyday people who just want to be more productive.
           </p>
           <p className="text-lg leading-relaxed text-muted-foreground">
-            <strong>AI for Everyone</strong> fills that gap. In about 4 hours (broken
-            into bite-sized 10-15 minute lessons), you&apos;ll go from AI beginner to
-            confident user. No coding. No jargon. Just practical skills.
+            <strong>AI for Everyone</strong> fills that gap. In about 8-9 hours (broken
+            into bite-sized 8-15 minute lessons across 9 Levels), you&apos;ll go from AI
+            beginner to confident user. No coding. No jargon. Just practical skills.
           </p>
         </div>
       </AnimatedEntry>

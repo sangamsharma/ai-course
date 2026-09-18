@@ -3,13 +3,13 @@ import type { Module } from "@/lib/types";
 export const module01: Module = {
   id: "ai-made-simple",
   slug: "ai-made-simple",
-  title: "AI Made Simple",
+  title: "Your First Win With AI",
   shortTitle: "AI Basics",
   description:
-    "Discover what AI really is (no jargon!), meet ChatGPT, Claude, and Gemini, and write your very first prompts.",
+    "Discover what AI really is (no jargon!), pick one free AI tool to start with, and walk away with something real you made — inside your first 20 minutes.",
   icon: "Sparkles",
   color: "teal",
-  estimatedMinutes: 55,
+  estimatedMinutes: 50,
   order: 1,
   lessons: [
     {
@@ -80,53 +80,56 @@ export const module01: Module = {
       id: "meet-the-tools",
       slug: "meet-the-tools",
       moduleId: "ai-made-simple",
-      title: "Meet Your AI Assistants",
-      subtitle: "ChatGPT, Claude, and Gemini — what's the difference?",
+      title: "Pick One Tool and Open It",
+      subtitle: "ChatGPT, Claude, and Gemini — meet all three, then set up just one",
       order: 2,
-      estimatedMinutes: 10,
+      estimatedMinutes: 12,
       content: [
         {
           type: "text",
-          body: "There are three main AI assistants available for free today: ChatGPT (by OpenAI), Claude (by Anthropic), and Gemini (by Google). All three can help you with writing, brainstorming, and answering questions. Here's how they compare:",
+          body: "There are three main AI assistants available for free today: ChatGPT (by OpenAI), Claude (by Anthropic), and Gemini (by Google). All three can help you with writing, brainstorming, and answering questions — the differences between them matter far less than just getting started with one. Skim the three below, pick whichever sounds most like you, and set it up right now. You can always try the other two later — nothing here is a permanent choice.",
         },
         {
           type: "bullet-list",
-          title: "ChatGPT (chat.openai.com)",
+          title: "ChatGPT — good if you want the most popular, all-purpose option",
           items: [
-            "Made by OpenAI — the most popular AI assistant",
-            "Free version is powerful enough for most tasks",
+            "Made by OpenAI — the most widely used AI assistant, so there are the most tutorials and communities to lean on",
             "Great at creative writing, explaining concepts, and general help",
-            "Easy to use — just type and chat",
-            "Available on web and mobile app",
+            "To set up: go to chat.openai.com, click 'Sign Up,' use your email or Google account, verify your email — you're in",
+            "Free tier (GPT-4o mini) is powerful enough for most everyday tasks",
           ],
         },
         {
           type: "bullet-list",
-          title: "Claude (claude.ai)",
+          title: "Claude — good if you write a lot or work with long documents",
           items: [
-            "Made by Anthropic — designed to be helpful and safe",
-            "Free version handles long documents really well",
-            "Excellent at writing with natural, human-like tone",
-            "Great for detailed analysis and thoughtful responses",
-            "Available on web and mobile app",
+            "Made by Anthropic — designed to be helpful and safe, with a natural, human-like writing tone",
+            "Free version handles long documents unusually well",
+            "To set up: go to claude.ai, click 'Sign Up,' use your email or Google account, verify your email — you're in",
+            "Free tier gives you plenty of daily usage",
           ],
         },
         {
           type: "bullet-list",
-          title: "Gemini (gemini.google.com)",
+          title: "Gemini — good if you already live in Gmail, Docs, or Drive",
           items: [
-            "Made by Google — integrates with Google apps",
-            "Free with a Google account",
+            "Made by Google — connects naturally with Gmail, Docs, and other Google apps you may already use",
+            "Free with any Google account — no separate signup needed",
+            "To set up: go to gemini.google.com and sign in with your Google account — that's it",
             "Good at generating images and creative content",
-            "Connects with Gmail, Docs, and other Google services",
-            "Available on web and mobile app",
           ],
         },
         {
           type: "tip-box",
           variant: "example",
           title: "Real-world example",
-          body: "Maria runs a small bakery. She uses ChatGPT to write Instagram posts about her daily specials, Claude to draft professional emails to suppliers, and Gemini to brainstorm new pastry ideas. She switches between them based on what she needs!",
+          body: "Maria runs a small bakery. She started with just ChatGPT for her first month. Once she was comfortable, she added Claude for drafting emails to suppliers, and later Gemini for brainstorming pastry ideas. She didn't need all three on day one — and neither do you.",
+        },
+        {
+          type: "tip-box",
+          variant: "warning",
+          title: "Important safety note",
+          body: "Never share personal information like your address, phone number, bank details, or passwords with any AI tool. Treat AI like you would a public library computer — your conversations are not completely private.",
         },
       ],
       exercises: [
@@ -143,132 +146,6 @@ export const module01: Module = {
           explanation:
             "Gemini is made by Google and integrates naturally with Google apps like Gmail, Docs, and Drive. ChatGPT and Claude are separate services.",
         },
-      ],
-      keyTakeaways: [
-        "ChatGPT, Claude, and Gemini are all free and easy to use",
-        "Each has its strengths — try them all to find your favorite",
-        "You can switch between tools for different tasks",
-      ],
-    },
-    {
-      id: "your-first-prompt",
-      slug: "your-first-prompt",
-      moduleId: "ai-made-simple",
-      title: "Write Your First Prompt",
-      subtitle: "Start talking to AI — it's easier than you think",
-      order: 3,
-      estimatedMinutes: 10,
-      content: [
-        {
-          type: "text",
-          body: "A 'prompt' is simply what you say to an AI. Just like you'd ask a friend for help, you type your request and the AI responds. There's no special code or format — plain English works great.",
-        },
-        {
-          type: "text",
-          body: "Let's start with the simplest prompt possible. Open any AI tool (ChatGPT, Claude, or Gemini) and try typing:",
-        },
-        {
-          type: "code-example",
-          title: "Your first prompt — try this!",
-          code: 'Explain what artificial intelligence is in 3 simple sentences, like you\'re talking to someone who has never used a computer before.',
-          language: "text",
-        },
-        {
-          type: "text",
-          body: "See how the AI responds in clear, simple language? That's because you told it HOW to explain (in 3 sentences) and WHO it's talking to (a complete beginner). These two ingredients — format and audience — are the secret to great prompts.",
-        },
-        {
-          type: "tip-box",
-          variant: "tip",
-          title: "The Simple Prompt Formula",
-          body: "Good prompts have 3 parts: (1) What you want, (2) How you want it (format, length, tone), and (3) Who it's for. Example: 'Write a short, friendly email (what + how) inviting my neighbors to a barbecue this Saturday (who).'",
-        },
-      ],
-      exercises: [
-        {
-          type: "prompt-playground",
-          id: "pp1-first-prompt",
-          title: "Try It Yourself!",
-          instruction:
-            "Write a prompt asking AI to explain something you know well (like your job or hobby) to a 10-year-old child. Use the formula: WHAT you want + HOW you want it + WHO it's for.",
-          promptHint:
-            "Explain what a [your job/hobby] does in 4 short sentences, simple enough for a 10-year-old to understand...",
-          sampleResponse:
-            "A baker is like a scientist who makes delicious magic! They mix flour, water, and special ingredients together. Then they put it in a hot oven where it transforms into bread, cookies, or cakes. Finally, they share these yummy creations with people who come to their shop!",
-          improvementTip:
-            "Great job! Notice how specifying '4 short sentences' and 'for a 10-year-old' gave you a clear, simple explanation. These details are what make prompts effective.",
-        },
-        {
-          type: "quiz",
-          id: "q3-prompt-formula",
-          question: "What are the 3 key parts of a good prompt?",
-          options: [
-            { id: "a", text: "Subject, verb, and object", isCorrect: false },
-            { id: "b", text: "What you want, how you want it, who it's for", isCorrect: true },
-            { id: "c", text: "Introduction, body, conclusion", isCorrect: false },
-            { id: "d", text: "Question, answer, explanation", isCorrect: false },
-          ],
-          explanation:
-            "The simple formula is: WHAT you want the AI to do + HOW you want it done (format, length, tone) + WHO the audience is. This gives the AI everything it needs to give you a great response.",
-        },
-      ],
-      keyTakeaways: [
-        "A prompt is just plain English — no special code needed",
-        "Use the formula: What + How + Who",
-        "The more specific you are, the better the response",
-      ],
-    },
-    {
-      id: "setting-up-accounts",
-      slug: "setting-up-accounts",
-      moduleId: "ai-made-simple",
-      title: "Setting Up Your AI Accounts",
-      subtitle: "Get ready to use all three tools — for free",
-      order: 4,
-      estimatedMinutes: 7,
-      content: [
-        {
-          type: "text",
-          body: "All three major AI tools offer free versions that are more than enough for everyday use. Setting up an account takes about 2 minutes each. Here's what you need:",
-        },
-        {
-          type: "bullet-list",
-          title: "ChatGPT Setup:",
-          items: [
-            "Go to chat.openai.com",
-            "Click 'Sign Up' and use your email or Google account",
-            "Verify your email — you're in!",
-            "Free tier includes GPT-4o mini (plenty for most tasks)",
-          ],
-        },
-        {
-          type: "bullet-list",
-          title: "Claude Setup:",
-          items: [
-            "Go to claude.ai",
-            "Click 'Sign Up' and use your email or Google account",
-            "Verify your email — you're in!",
-            "Free tier gives you plenty of daily usage",
-          ],
-        },
-        {
-          type: "bullet-list",
-          title: "Gemini Setup:",
-          items: [
-            "Go to gemini.google.com",
-            "Sign in with your Google account (or create one for free)",
-            "That's it — no separate signup needed!",
-            "Free with any Google account",
-          ],
-        },
-        {
-          type: "tip-box",
-          variant: "warning",
-          title: "Important Safety Note",
-          body: "Never share personal information like your address, phone number, bank details, or passwords with any AI tool. Treat AI like you would a public library computer — your conversations are not completely private.",
-        },
-      ],
-      exercises: [
         {
           type: "quiz",
           id: "q4-setup",
@@ -284,19 +161,18 @@ export const module01: Module = {
         },
       ],
       keyTakeaways: [
-        "All three tools have generous free tiers",
-        "Setup takes about 2 minutes per tool",
+        "All three tools have generous free tiers and take about 2 minutes to set up",
+        "Pick ONE to start — you can try the others any time",
         "Never share personal or financial information with AI",
       ],
     },
-    // === Lesson 5: Your First Real AI Task ===
     {
       id: "first-real-task",
       slug: "first-real-task",
       moduleId: "ai-made-simple",
-      title: "Your First Real AI Task",
+      title: "Your First Real Win",
       subtitle: "Follow this step-by-step guide to solve an actual problem with AI — right now",
-      order: 5,
+      order: 3,
       estimatedMinutes: 12,
       content: [
         {
@@ -307,7 +183,7 @@ export const module01: Module = {
           type: "tip-box",
           variant: "important",
           title: "Do This Now — Don't Just Read",
-          body: "Open ChatGPT (chat.openai.com), Claude (claude.ai), or Gemini (gemini.google.com) in another tab. This lesson is designed to be done WITH the AI tool open. Reading without doing = forgetting. Doing = learning.",
+          body: "Open the AI tool you set up in the last lesson. This lesson is designed to be done WITH the AI tool open. Reading without doing = forgetting. Doing = learning.",
         },
         {
           type: "text",
@@ -391,14 +267,77 @@ export const module01: Module = {
         "Read AI output out loud — if it doesn't sound like you, keep refining",
       ],
     },
-    // === Lesson 6: AI in Your Daily Life ===
+    {
+      id: "your-first-prompt",
+      slug: "your-first-prompt",
+      moduleId: "ai-made-simple",
+      title: "Naming the Pattern: What Makes a Prompt Work",
+      subtitle: "You just did it — now let's name why it worked",
+      order: 4,
+      estimatedMinutes: 10,
+      content: [
+        {
+          type: "text",
+          body: "In the last lesson, you already wrote several prompts and watched them get better round by round. A 'prompt' is simply what you say to an AI — just like you'd ask a friend for help, you type your request and the AI responds. There's no special code or format — plain English works great. Let's slow down for a moment and name exactly what made your Round 2 and Round 4 prompts work so much better than Round 1.",
+        },
+        {
+          type: "code-example",
+          title: "Try this on its own — a good one-line prompt",
+          code: 'Explain what artificial intelligence is in 3 simple sentences, like you\'re talking to someone who has never used a computer before.',
+          language: "text",
+        },
+        {
+          type: "text",
+          body: "Try that one now. Notice how the AI responds in clear, simple language? That's because you told it HOW to explain (in 3 sentences) and WHO it's talking to (a complete beginner). These two ingredients — format and audience — are exactly what made your barbecue email better in Round 2.",
+        },
+        {
+          type: "tip-box",
+          variant: "tip",
+          title: "The Simple Prompt Formula",
+          body: "Good prompts have 3 parts: (1) What you want, (2) How you want it (format, length, tone), and (3) Who it's for. Example: 'Write a short, friendly email (what + how) inviting my neighbors to a barbecue this Saturday (who).'",
+        },
+      ],
+      exercises: [
+        {
+          type: "prompt-playground",
+          id: "pp1-first-prompt",
+          title: "Try It Yourself!",
+          instruction:
+            "Write a prompt asking AI to explain something you know well (like your job or hobby) to a 10-year-old child. Use the formula: WHAT you want + HOW you want it + WHO it's for.",
+          promptHint:
+            "Explain what a [your job/hobby] does in 4 short sentences, simple enough for a 10-year-old to understand...",
+          sampleResponse:
+            "A baker is like a scientist who makes delicious magic! They mix flour, water, and special ingredients together. Then they put it in a hot oven where it transforms into bread, cookies, or cakes. Finally, they share these yummy creations with people who come to their shop!",
+          improvementTip:
+            "Great job! Notice how specifying '4 short sentences' and 'for a 10-year-old' gave you a clear, simple explanation. These details are what make prompts effective.",
+        },
+        {
+          type: "quiz",
+          id: "q3-prompt-formula",
+          question: "What are the 3 key parts of a good prompt?",
+          options: [
+            { id: "a", text: "Subject, verb, and object", isCorrect: false },
+            { id: "b", text: "What you want, how you want it, who it's for", isCorrect: true },
+            { id: "c", text: "Introduction, body, conclusion", isCorrect: false },
+            { id: "d", text: "Question, answer, explanation", isCorrect: false },
+          ],
+          explanation:
+            "The simple formula is: WHAT you want the AI to do + HOW you want it done (format, length, tone) + WHO the audience is. This gives the AI everything it needs to give you a great response.",
+        },
+      ],
+      keyTakeaways: [
+        "A prompt is just plain English — no special code needed",
+        "Use the formula: What + How + Who",
+        "The more specific you are, the better the response",
+      ],
+    },
     {
       id: "ai-daily-life",
       slug: "ai-daily-life",
       moduleId: "ai-made-simple",
       title: "AI in Your Daily Life — 10 Ways to Use It Today",
       subtitle: "Practical, immediately useful ways AI can help with things you already do",
-      order: 6,
+      order: 5,
       estimatedMinutes: 10,
       content: [
         {

@@ -97,9 +97,10 @@ export default function PricingPage() {
       </AnimatedEntry>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
-        {trainingTracks.map((track, i) => (
-          <AnimatedEntry key={track.id} delay={i * 0.05}>
-            <Card className="h-full">
+        {trainingTracks.map((track, i) => {
+          const hasSelfPacedContent = track.id === "microsoft-copilot";
+          const cardContent = (
+            <Card className={cn("h-full", hasSelfPacedContent && "transition-all hover:shadow-md")}>
               <CardHeader>
                 <CardTitle className="text-base">{track.label}</CardTitle>
                 <CardDescription className="text-sm">{track.description}</CardDescription>
@@ -112,17 +113,33 @@ export default function PricingPage() {
                     </Badge>
                   ))}
                 </div>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1.5 mb-3">
                   {track.durationOptions.map((d) => (
                     <Badge key={d} variant="outline" className="text-xs capitalize">
                       {d.replace(/-/g, " ")}
                     </Badge>
                   ))}
                 </div>
+                {hasSelfPacedContent && (
+                  <span className="text-sm font-medium text-primary inline-flex items-center gap-1">
+                    Open self-paced track <ArrowRight className="h-3.5 w-3.5" />
+                  </span>
+                )}
               </CardContent>
             </Card>
-          </AnimatedEntry>
-        ))}
+          );
+          return (
+            <AnimatedEntry key={track.id} delay={i * 0.05}>
+              {hasSelfPacedContent ? (
+                <Link href={`/corporate/${track.id}`} className="block">
+                  {cardContent}
+                </Link>
+              ) : (
+                cardContent
+              )}
+            </AnimatedEntry>
+          );
+        })}
       </div>
 
       {/* Custom CTA */}

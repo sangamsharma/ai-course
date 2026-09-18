@@ -6,6 +6,11 @@ import {
   Briefcase,
   FileText,
   ShieldCheck,
+  Palette,
+  Zap,
+  Heart,
+  Plane,
+  Brain,
   type LucideIcon,
 } from "lucide-react";
 
@@ -66,6 +71,11 @@ export const moduleIcons: Record<string, LucideIcon> = {
   Briefcase,
   FileText,
   ShieldCheck,
+  Palette,
+  Zap,
+  Heart,
+  Plane,
+  Brain,
 };
 
 /** Emoji fallbacks for module icons (used in module detail page header). */
@@ -76,4 +86,9 @@ export const moduleIconEmojis: Record<string, string> = {
   Briefcase: "💼",
   FileText: "📄",
   ShieldCheck: "🛡️",
+  Palette: "🎨",
+  Zap: "⚡",
+  Heart: "❤️",
+  Plane: "✈️",
+  Brain: "🧠",
 };

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { SessionProvider } from "next-auth/react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -48,15 +49,17 @@ export default function RootLayout({
           Skip to content
         </a>
 
-        <BrandProvider>
-          <TooltipProvider>
-            <SiteHeader />
-            <main className="flex-1" id="main-content">
-              <PageTransition>{children}</PageTransition>
-            </main>
-            <SiteFooter />
-          </TooltipProvider>
-        </BrandProvider>
+        <SessionProvider>
+          <BrandProvider>
+            <TooltipProvider>
+              <SiteHeader />
+              <main className="flex-1" id="main-content">
+                <PageTransition>{children}</PageTransition>
+              </main>
+              <SiteFooter />
+            </TooltipProvider>
+          </BrandProvider>
+        </SessionProvider>
         <Analytics />
       </body>
     </html>

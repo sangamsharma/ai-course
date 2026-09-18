@@ -1,16 +1,16 @@
 import type { Module } from "@/lib/types";
 
-export const module02: Module = {
+export const module03: Module = {
   id: "the-art-of-asking",
   slug: "the-art-of-asking",
-  title: "The Art of Asking",
+  title: "Ask Better, Every Time",
   shortTitle: "Prompting",
   description:
-    "Master the skill of writing effective prompts. Learn the 3-level mastery system, see good vs bad examples, and create reusable templates for every situation.",
+    "Master the skill of writing effective prompts. Learn the 5-part formula, the Persona Pattern, how to build reusable templates, and how to learn anything by teaching it back.",
   icon: "MessageSquare",
   color: "blue",
   estimatedMinutes: 55,
-  order: 2,
+  order: 3,
   lessons: [
     // === Lesson 1: Good vs Bad Prompts ===
     {
@@ -40,7 +40,7 @@ export const module02: Module = {
         },
         {
           type: "text",
-          body: "Here's the simple formula we introduced in Module 1, expanded with more detail:",
+          body: "Here's the simple formula we introduced in Level 1, expanded with more detail:",
         },
         {
           type: "bullet-list",
@@ -209,7 +209,7 @@ export const module02: Module = {
         },
         {
           type: "text",
-          body: "This is Level 2 of prompt mastery — moving from basic task formulation to creating 'system prompts' that act as reusable templates. A system prompt is a set of instructions you can use over and over for similar tasks.",
+          body: "This is a big step up in how you use AI — moving from basic requests to creating templates you can reuse. A template is a set of instructions you can use over and over for similar tasks — that's exactly what the next two lessons are about.",
         },
         {
           type: "tip-box",
@@ -253,7 +253,6 @@ export const module02: Module = {
         "Specificity is the #1 factor in prompt quality",
         "Add details about length, tone, audience, format, and purpose",
         "Save your best prompts as reusable templates",
-        "Level 2 mastery: system prompts you can use repeatedly",
       ],
     },
     // === Lesson 4: Prompt Templates ===
@@ -300,8 +299,8 @@ Format: Start with a thank you, address their concern, offer solution, end with 
         {
           type: "tip-box",
           variant: "tip",
-          title: "This Is Level 2 Mastery",
-          body: "Once you have 5-10 personal templates saved, you've reached Level 2 of prompt mastery. You're no longer writing prompts from scratch — you're just filling in blanks. This is how professionals use AI efficiently.",
+          title: "This Is a Real Skill Level-Up",
+          body: "Once you have 5-10 personal templates saved, you're no longer writing prompts from scratch — you're just filling in blanks. This is how professionals use AI efficiently. (Later, in Level 6, you'll learn how to save this kind of context permanently so you don't even need to paste a template each time.)",
         },
       ],
       exercises: [
@@ -323,67 +322,86 @@ Format: Start with a thank you, address their concern, offer solution, end with 
         "Templates save time — create once, use forever",
         "Build templates for tasks you do weekly",
         "Use [brackets] for parts you change each time",
-        "5-10 personal templates = Level 2 prompt mastery",
       ],
     },
-    // === Lesson 5: The 7-Step AI Pipeline ===
+    // === Lesson 5: Learning With AI (moved from the old Personal Documents module) ===
     {
-      id: "m2-pipeline",
-      slug: "ai-pipeline",
+      id: "m5-learning",
+      slug: "learning-and-research",
       moduleId: "the-art-of-asking",
-      title: "The 7-Step AI Pipeline",
-      subtitle: "A professional workflow for complex tasks — from idea to finished product",
+      title: "Learn Anything by Teaching It Back",
+      subtitle: "Use AI as a personal tutor — and the one technique that makes it actually stick",
       order: 5,
-      estimatedMinutes: 10,
+      estimatedMinutes: 12,
       content: [
         {
           type: "text",
-          body: "For simple tasks (write an email, summarize this), a single prompt is enough. But for bigger projects — a marketing plan, an event, a business proposal — professionals use a multi-step pipeline. Here's the 7-step framework used by expert AI users:",
+          body: "AI can be your personal tutor for almost any subject. It explains concepts in simple terms, creates practice exercises, answers follow-up questions endlessly, and adapts to your learning style. It's like having a patient teacher available 24/7 — and it pairs perfectly with the specific, templated prompts you just practiced.",
+        },
+        {
+          type: "code-example",
+          title: "Learning Prompt:",
+          code: `I want to learn about [topic]. I'm a complete beginner.
+Explain it to me like I'm [age/background — e.g., 'a curious 12-year-old' or 'someone who's never used a computer'].
+Break it into [X] simple lessons.
+For each lesson, include: a simple explanation, a real-world example, and one thing I can try myself.
+After explaining, ask me 3 questions to check my understanding.`,
+          language: "text",
         },
         {
           type: "bullet-list",
-          title: "The 7-Step AI Production Pipeline",
+          title: "Things AI Can Teach You:",
           items: [
-            "Step 1: DEFINE — Clearly state your goal and what success looks like.",
-            "Step 2: DECOMPOSE — Break the big task into smaller sub-tasks the AI can handle one at a time.",
-            "Step 3: GENERATE — Run each sub-task through AI with specific prompts. Get multiple versions of important outputs.",
-            "Step 4: CRITIQUE — Ask the AI to review its own output: 'What's wrong with this? What could be improved?'",
-            "Step 5: ITERATE — Use the AI's own feedback to improve. 'Based on your suggestions, rewrite this to fix issues 1, 2, and 3.'",
-            "Step 6: ASSEMBLE — Combine all the improved pieces into your final document or plan.",
-            "Step 7: AUTOMATE — Save the prompt chain as a template for next time.",
+            "Languages — practice conversations, grammar explanations, vocabulary",
+            "History — explain events, connect causes and effects, suggest books",
+            "Science — from basic biology to understanding medical reports",
+            "Technology — how computers, internet, and apps work",
+            "Cooking techniques and food science",
+            "Gardening for your specific climate and space",
+            "Music theory and instrument basics",
+            "Personal finance and investing fundamentals",
           ],
         },
         {
           type: "tip-box",
-          variant: "example",
-          title: "Real Example: Planning a Customer Appreciation Event",
-          body: "Step 1: 'I want to plan a customer appreciation dinner for 30 people, budget $3,000.' → Step 2: Break into venue ideas, menu planning, invitation email, timeline. → Step 3: AI generates each piece. → Step 4: 'Review this event plan and point out 3 problems or missing things.' → Step 5: Fix the issues. → Step 6: Combine everything into a final Event Plan document. → Step 7: Save the prompt chain for next year's event.",
-        },
-        {
-          type: "text",
-          body: "This pipeline might sound like a lot, but for big tasks it actually saves time and produces much better results than struggling with one giant, vague prompt. It's Level 3 mastery — modular, structured, professional.",
+          variant: "tip",
+          title: "Learning Strategy: The Feynman Technique with AI",
+          body: "Step 1: Ask AI to explain a topic simply. Step 2: In your own words, try to explain it back to the AI. Step 3: Ask AI to point out what you got wrong or missed. Step 4: Repeat with the corrected understanding. This active learning method is proven to be one of the most effective ways to truly understand something — and it only works if you actually do Step 2, not just read about it.",
         },
       ],
       exercises: [
         {
           type: "quiz",
-          id: "m2-q4-pipeline",
-          question: "In the 7-step AI Pipeline, what comes right after generating output?",
+          id: "m5-q4-learning",
+          question: "What's the Feynman Technique for learning with AI?",
           options: [
-            { id: "a", text: "Assemble the final product", isCorrect: false },
-            { id: "b", text: "Ask AI to critique its own output", isCorrect: true },
-            { id: "c", text: "Automate for future use", isCorrect: false },
-            { id: "d", text: "Define the goal more clearly", isCorrect: false },
+            { id: "a", text: "Reading AI explanations multiple times until memorized", isCorrect: false },
+            { id: "b", text: "Ask AI to explain → you explain back → AI corrects you → repeat", isCorrect: true },
+            { id: "c", text: "Taking notes while AI lectures for an hour", isCorrect: false },
+            { id: "d", text: "Only learning one fact per day", isCorrect: false },
           ],
           explanation:
-            "After generating output, the next step is CRITIQUE — ask the AI to review its own work and point out problems. This self-criticism step is what separates amateur from professional AI use. Then you ITERATE (fix the issues) before ASSEMBLING the final product.",
+            "The Feynman Technique: learn → teach back → get corrected → repeat. By trying to explain what you learned, you discover gaps in your understanding. AI is perfect for this because it's endlessly patient and can check your explanations instantly.",
+        },
+        {
+          type: "prompt-playground",
+          id: "m5-pp-feynman",
+          title: "Actually Do It: Explain Something Back",
+          instruction:
+            "Pick something you're a little fuzzy on — a topic from work, the news, or even something earlier in this course. First, ask AI to explain it simply. Then, in your own words (don't copy AI's wording), explain it back in 2-3 sentences and ask AI to correct anything you got wrong. Paste your own explanation here, not the AI's.",
+          promptHint:
+            "After AI explains [topic] to you, try: 'Here's my understanding in my own words: [your explanation]. Did I get anything wrong or miss anything important?'",
+          sampleResponse:
+            "Topic: how compound interest works. My explanation: 'Compound interest means you earn interest not just on the money you put in, but also on the interest you already earned — so it grows faster over time, like a snowball.' AI's correction: 'That's exactly right! One thing to add: the longer the money sits, the bigger the snowball effect — which is why starting early matters more than the amount you start with.'",
+          improvementTip:
+            "Notice that the value here isn't the AI's explanation — it's the moment you tried to say it back in your own words and found out what you'd actually understood versus what you'd only read. That gap is exactly what this technique is designed to catch.",
         },
       ],
       keyTakeaways: [
-        "Simple tasks = single prompt. Big projects = multi-step pipeline",
-        "7 steps: Define → Decompose → Generate → Critique → Iterate → Assemble → Automate",
-        "Self-critique is the secret weapon — AI can review and improve its own output",
-        "Save successful prompt chains as templates (Step 7 = efficiency forever)",
+        "AI is a 24/7 personal tutor for almost any subject",
+        "Explain concepts simply, create practice exercises, answer endless questions",
+        "Use the Feynman Technique: learn → teach back → get corrected → repeat",
+        "The teach-back step is the one that actually makes it stick — don't skip it",
       ],
     },
   ],

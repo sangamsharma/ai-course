@@ -12,8 +12,8 @@ export const siteConfig = {
 } as const;
 
 export const courseConfig = {
-  totalModules: 19,
-  totalEstimatedMinutes: 575, // ~9.5 hours (6 complete modules + 12 in development)
+  totalModules: 9,
+  totalEstimatedMinutes: 509, // ~8.5 hours across 9 sequential Levels (plus optional "More Topics" extras)
   difficulty: "Beginner" as const,
   prerequisites: "None — just basic computer skills and curiosity!",
 } as const;

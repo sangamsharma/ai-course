@@ -1,16 +1,16 @@
 import type { Module } from "@/lib/types";
 
-export const module03: Module = {
+export const module04: Module = {
   id: "ai-for-everyday-tasks",
   slug: "ai-for-everyday-tasks",
-  title: "AI for Everyday Tasks",
+  title: "Everyday Writing, Planning & Money",
   shortTitle: "Daily AI",
   description:
-    "Use AI for emails, summaries, translations, meal planning, travel research, and personal finance — the things you do every day, made easier.",
+    "Use AI for emails, letters and forms, summaries, translations, event and meal planning, travel, and a simple budget — the things you do every day, made easier.",
   icon: "Pen",
   color: "emerald",
-  estimatedMinutes: 60,
-  order: 3,
+  estimatedMinutes: 100,
+  order: 4,
   lessons: [
     // Lesson 1: Writing Emails
     {
@@ -140,14 +140,14 @@ Format: Start with a greeting, body, and closing.`,
           type: "tip-box",
           variant: "tip",
           title: "Pro Tip: Claude for Long Documents",
-          body: "Claude is especially good with very long documents — it can handle up to 200,000 words at once (that's a whole book!). For summarizing long reports, contracts, or research papers, Claude is often the best choice.",
+          body: "Claude is especially good with very long documents. For summarizing long reports, contracts, or research papers, Claude is often the best choice — check its current context-window size, since this changes as the tool improves.",
         },
       ],
       exercises: [
         {
           type: "quiz",
           id: "m3-q2-summarize",
-          question: "Which AI tool is best for summarizing very long documents like contracts or books?",
+          question: "Which AI tool is generally best for summarizing very long documents like contracts or books?",
           options: [
             { id: "a", text: "ChatGPT", isCorrect: false },
             { id: "b", text: "Claude", isCorrect: true },
@@ -155,13 +155,13 @@ Format: Start with a greeting, body, and closing.`,
             { id: "d", text: "All are equally good with long documents", isCorrect: false },
           ],
           explanation:
-            "Claude can handle up to 200,000 words at once — far more than the other tools. For long contracts, reports, or books, Claude is usually the best choice. ChatGPT and Gemini work well for shorter texts.",
+            "Claude is generally the strongest choice for very long documents — but exactly how long a document each tool can handle changes over time as the tools improve, so it's worth a quick check before relying on it for something huge.",
         },
       ],
       keyTakeaways: [
         "AI summarizes long texts into key points in seconds",
         "Translation works between most languages with good accuracy",
-        "Claude is best for very long documents (books, contracts)",
+        "Claude is generally best for very long documents (books, contracts)",
         "Always review AI translations for nuance — especially with idioms",
       ],
     },
@@ -264,6 +264,12 @@ Also create: a complete shopping list grouped by grocery store section.`,
           title: "Real Example: Feeding a Diabetic Parent",
           body: "A caregiver asked AI: 'Create a 5-day meal plan for my 72-year-old mother who has type 2 diabetes, high blood pressure, and is a picky eater. She prefers simple, familiar foods. Budget: $80/week. Include a shopping list.' The AI created a plan with oatmeal breakfasts, soup-and-salad lunches, simple protein dinners (baked chicken, fish, lentil soup), and diabetic-friendly snacks — all with portion sizes and a grocery list organized by aisle.",
         },
+        {
+          type: "tip-box",
+          variant: "warning",
+          title: "Medical Disclaimer",
+          body: "AI is NOT a doctor, dietitian, or nutritionist. Use it for meal ideas and recipe help, but consult a qualified professional for medical dietary advice — especially for conditions like diabetes, allergies, or heart disease.",
+        },
       ],
       exercises: [
         {
@@ -284,7 +290,7 @@ Also create: a complete shopping list grouped by grocery store section.`,
         "AI creates complete meal plans with dietary and budget constraints",
         "List your ingredients for 'what can I cook' suggestions",
         "Include a shopping list organized by grocery aisle",
-        "Claude is particularly good at detailed, structured meal plans",
+        "AI is for meal ideas — not medical nutrition advice",
       ],
     },
     // Lesson 5: Travel Planning
@@ -320,7 +326,7 @@ Please include:
           type: "tip-box",
           variant: "tip",
           title: "Use Claude for Detailed Itineraries",
-          body: "Claude excels at structured, detailed travel plans. Its ability to handle long, organized outputs makes it perfect for multi-day itineraries. ChatGPT is great for brainstorming destinations if you're not sure where to go. Gemini can help with visual research if you want to see pictures of destinations.",
+          body: "Claude excels at structured, detailed travel plans. ChatGPT is great for brainstorming destinations if you're not sure where to go. Gemini can help with visual research if you want to see pictures of destinations.",
         },
       ],
       exercises: [
@@ -350,7 +356,7 @@ Please include:
       id: "m3-finance",
       slug: "personal-finance",
       moduleId: "ai-for-everyday-tasks",
-      title: "Personal Finance & Budgeting",
+      title: "A Simple Budget in Plain English",
       subtitle: "Create budgets, track expenses, and get simple financial guidance",
       order: 6,
       estimatedMinutes: 10,
@@ -373,7 +379,7 @@ Please include:
         },
         {
           type: "text",
-          body: "AI is also great for: comparing costs ('Should I buy or lease a car?'), explaining financial terms ('What's a 401k in simple terms?'), calculating loan payments, and creating savings plans for specific goals like a vacation or new appliance.",
+          body: "AI is also great for: comparing costs ('Should I buy or lease a car?'), explaining financial terms ('What's compound interest in simple terms?'), calculating loan payments, and creating savings plans for specific goals like a vacation or new appliance.",
         },
       ],
       exercises: [
@@ -397,6 +403,130 @@ Please include:
         "AI explains financial concepts in plain English, not jargon",
         "For serious financial decisions, consult a human professional",
       ],
+    },
+    // Lesson 7: Letters & Forms (moved from the old Personal Documents module)
+    {
+      id: "m5-letters",
+      slug: "letters-and-forms",
+      moduleId: "ai-for-everyday-tasks",
+      title: "Letters, Forms & Official Paperwork",
+      subtitle: "Handle official paperwork, personal letters, and applications with confidence",
+      order: 7,
+      estimatedMinutes: 10,
+      content: [
+        {
+          type: "text",
+          body: "Official forms and formal letters can be intimidating. AI helps you understand what's being asked, draft appropriate responses, and maintain the right tone for official correspondence.",
+        },
+        {
+          type: "bullet-list",
+          title: "Documents AI Can Help Draft:",
+          items: [
+            "Rental applications and reference letters",
+            "Insurance claim letters and forms",
+            "Medical appointment request letters",
+            "School application essays and forms",
+            "Complaint letters to companies or government offices",
+            "Thank-you letters after interviews or events",
+            "Personal recommendation letters for friends or colleagues",
+          ],
+        },
+        {
+          type: "code-example",
+          title: "Formal Letter Prompt:",
+          code: `Help me write a formal letter to [recipient/organization].
+Purpose: [what you're requesting or explaining].
+Key facts: [dates, reference numbers, amounts, names].
+My desired outcome: [what you want them to do].
+Tone: [formal and polite / firm / apologetic].
+Include: my contact information, a clear subject line, and a professional closing.`,
+          language: "text",
+        },
+        {
+          type: "tip-box",
+          variant: "tip",
+          title: "Privacy Reminder",
+          body: "When filling out forms with AI help, describe the information CATEGORIES you need to provide (e.g., 'a paragraph about my employment history in retail'), not the actual sensitive data (SSN, bank details, exact address). Fill those in yourself after AI drafts the rest.",
+        },
+      ],
+      exercises: [
+        {
+          type: "prompt-playground",
+          id: "m5-pp-letter",
+          title: "Draft a Formal Letter",
+          instruction:
+            "Think of a situation where you needed to write a formal letter. Write a prompt for AI to draft it — include the purpose, key facts, and desired outcome.",
+          promptHint:
+            "Write a letter to my landlord requesting permission to have a small pet dog in my apartment. I've been a tenant for 3 years, always paid rent on time, and the dog is a small, trained, hypoallergenic breed. I'm willing to pay an additional pet deposit...",
+          sampleResponse:
+            "[Your Name]\n[Your Address]\n[City, State ZIP]\n[Email]\n[Phone]\n[Date]\n\n[Landlord Name]\n[Management Company]\n[Address]\n\nSubject: Request for Pet Authorization — Unit #[X]\n\nDear [Landlord Name],\n\nI am writing to formally request permission to keep a small dog in my apartment. As you know, I have been a tenant at [Building Name] for three years, during which time I have maintained the property in excellent condition and have always paid rent on or before the due date.\n\nThe dog is a 3-year-old Cavalier King Charles Spaniel — a small breed (13-18 lbs) that is known for being quiet, gentle, and hypoallergenic. She is fully house-trained, spayed, and up to date on all vaccinations. I am happy to provide veterinary records upon request.\n\nI understand this would require an amendment to my lease agreement and am prepared to pay an additional pet deposit of $[amount] as well as any monthly pet rent. I am also willing to have the apartment professionally cleaned upon move-out.\n\nThank you for considering my request. I am available to discuss this at your convenience.\n\nSincerely,\n[Your Name]",
+          improvementTip:
+            "This letter works because it addresses the landlord's likely concerns (damage, noise, allergies) proactively and offers solutions (deposit, professional cleaning). Good prompts help AI anticipate objections and address them.",
+        },
+      ],
+      keyTakeaways: [
+        "AI helps with any formal letter — just provide the facts and purpose",
+        "Anticipate the recipient's concerns and address them in your prompt",
+        "Never put sensitive personal data (SSN, bank info) in AI prompts",
+        "AI ensures proper formatting and professional tone for official correspondence",
+      ],
+    },
+    // Lesson 8: Packing Lists (moved from the old Travel Planning module)
+    {
+      id: "m09-packing",
+      slug: "packing-lists",
+      moduleId: "ai-for-everyday-tasks",
+      title: "Smart Packing Lists",
+      subtitle: "Generate packing checklists customized to destination, season, and activities",
+      order: 8,
+      estimatedMinutes: 8,
+      content: [
+        { type: "text", body: "AI generates detailed packing lists based on your destination's weather, planned activities, and trip length. No more overpacking or forgetting essentials." },
+        { type: "code-example", title: "Packing List Prompt:", code: "Create a packing list for a [X]-day trip to [destination] in [month]. Activities: [list]. Weather: [temp range, rain likelihood]. Include: clothing (with quantities), toiletries, electronics, documents, health items, and destination-specific essentials (adapters, dress codes). I'm using [carry-on / checked luggage].", language: "text" },
+      ],
+      exercises: [
+        { type: "quiz", id: "m09-q1", question: "What details should a good travel packing prompt include?", options: [{ id: "a", text: "Just the destination name", isCorrect: false }, { id: "b", text: "Destination, dates, weather, activities, and luggage type", isCorrect: true }, { id: "c", text: "Your home address", isCorrect: false }, { id: "d", text: "Only the airline name", isCorrect: false }], explanation: "The more relevant details — destination, season, activities, weather, luggage limits — the more useful your packing list.", allowRetry: true },
+      ],
+      keyTakeaways: ["AI packing lists save time and prevent overpacking", "Include weather, activities, and luggage limits", "Double-check destination-specific items (adapters, dress codes)"],
+    },
+    // Lesson 9: Comparing Financial Products (moved from the old Personal Finance module)
+    {
+      id: "m10-compare",
+      slug: "comparing-products",
+      moduleId: "ai-for-everyday-tasks",
+      title: "Comparing Financial Products",
+      subtitle: "Use AI to understand and compare insurance, loans, credit cards, and plans",
+      order: 9,
+      estimatedMinutes: 10,
+      content: [
+        { type: "text", body: "Comparing financial products is confusing. AI can explain terms, highlight hidden fees, and help you ask the right questions. It won't tell you what to pick, but it will help you make an informed decision." },
+        { type: "code-example", title: "Product Comparison Prompt:", code: `I'm comparing two [product types]. Help me understand the differences:
+Option A: [features, price, terms — no brand name]
+Option B: [features, price, terms — no brand name]
+Explain: key differences in plain English, hidden fees to watch for, questions to ask before choosing. Do NOT recommend one. Just help me understand.`, language: "text" },
+      ],
+      exercises: [
+        { type: "quiz", id: "m10-q1", question: "When using AI for financial help, what must you NEVER share?", options: [{ id: "a", text: "Your monthly income range", isCorrect: false }, { id: "b", text: "Bank account numbers and tax file number", isCorrect: true }, { id: "c", text: "Your savings goals", isCorrect: false }, { id: "d", text: "Approximate grocery spending", isCorrect: false }], explanation: "Never share account numbers, tax IDs, passwords, or any data that could access your financial accounts.", allowRetry: true },
+      ],
+      keyTakeaways: ["AI explains complex financial terms in plain language", "Use AI to prepare questions before talking to banks or brokers", "Never share account numbers, tax IDs, or real financial documents"],
+    },
+    // Lesson 10: Financial Goals (moved from the old Personal Finance module)
+    {
+      id: "m10-goals",
+      slug: "financial-goals",
+      moduleId: "ai-for-everyday-tasks",
+      title: "Setting Financial Goals",
+      subtitle: "Create savings plans and learn investment concepts with AI guidance",
+      order: 10,
+      estimatedMinutes: 10,
+      content: [
+        { type: "text", body: "AI can break down big financial goals into monthly targets, calculate savings timelines, and explain investment concepts. It's a planning assistant — not a replacement for professional financial advice." },
+        { type: "bullet-list", title: "Financial Topics AI Can Explain:", items: ["Superannuation / retirement account basics", "Compound interest — how it works and why it matters", "Different savings account types explained", "How tax brackets work (in general terms)", "Debt payoff strategies (snowball vs avalanche)", "First home buyer programs (general information only)"] },
+      ],
+      exercises: [
+        { type: "fill-in-blank", id: "m10-fib-goals", title: "Set a Savings Goal", instruction: "Use the template to plan a savings goal.", template: "I want to save ${{amount}} for a {{goal}} in {{timeframe}} months. My monthly income is approximately ${{income}}. After fixed expenses I have about ${{leftover}} left. Help me create a realistic savings plan.", blanks: [{ key: "amount", answer: "5000", hint: "How much?" }, { key: "goal", answer: "holiday", hint: "What for?" }, { key: "timeframe", answer: "12", hint: "Months?" }, { key: "income", answer: "4000", hint: "Monthly?" }, { key: "leftover", answer: "800", hint: "After bills?" }] },
+      ],
+      keyTakeaways: ["Break big goals into monthly targets with AI's help", "Use AI to understand financial concepts before consulting professionals", "All AI financial calculations are estimates — verify independently"],
     },
   ],
 };
